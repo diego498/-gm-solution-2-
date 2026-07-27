@@ -1170,8 +1170,20 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="mensaje">Mensaje (opcional)</label>
-            <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Algo más que quieras contarnos?"></textarea>
+            <label for="boleta">Adjunta tu boleta de luz</label>
+            <div class="file-upload" id="fileUploadArea">
+              <input type="file" id="boleta" name="boleta" accept=".pdf,.jpg,.jpeg,.png" />
+              <div class="file-upload__content">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="17 8 12 3 7 8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                <span class="file-upload__text">Haz clic o arrastra tu boleta aquí</span>
+                <span class="file-upload__hint">PDF, JPG o PNG · Máx. 10 MB</span>
+              </div>
+              <span class="file-upload__name" id="fileName"></span>
+            </div>
           </div>
           <button type="submit" class="btn btn--primary btn--full">Enviar cotización</button>
           <p class="form__note">Sin compromiso · Respuesta en &lt;24h</p>

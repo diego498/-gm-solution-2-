@@ -98,6 +98,16 @@ if (heroBg) {
   }, { passive: true });
 }
 
+/* ---- File upload: mostrar nombre del archivo ---- */
+const boletaInput = document.getElementById('boleta');
+const fileName = document.getElementById('fileName');
+if (boletaInput && fileName) {
+  boletaInput.addEventListener('change', () => {
+    const file = boletaInput.files[0];
+    fileName.textContent = file ? '📎 ' + file.name : '';
+  });
+}
+
 /* ---- Form submit (placeholder) ---- */
 const form = document.getElementById('contactForm');
 if (form) {
