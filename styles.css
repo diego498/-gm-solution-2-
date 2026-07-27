@@ -4659,6 +4659,43 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   .calc__result-grid { grid-template-columns: 1fr 1fr; }
 }
 
+@media (max-width: 640px) {
+  /* Sección: menos espacio vertical */
+  #calculadora.section { padding-top: 2rem; padding-bottom: 2rem; }
+  #calculadora .section-header { margin-bottom: 0; }
+  #calculadora .section-title { font-size: 1.4rem; }
+
+  /* Grid: columna única con poco espacio */
+  .calc__wrap { gap: 1.25rem; margin-top: 1.25rem; }
+
+  /* Monto grande: reducir */
+  .calc__value { font-size: 1.9rem; }
+  .calc__currency { font-size: 1.5rem; }
+  .calc__amount-display { margin-bottom: .75rem; }
+  .calc__label { font-size: .88rem; margin-bottom: .6rem; }
+
+  /* Slider y etiquetas */
+  .calc__slider-labels { margin-bottom: 1rem; }
+  .calc__bar-wrap { margin-bottom: 1rem; }
+
+  /* Nota al pie del slider */
+  .calc__note { font-size: .72rem; }
+
+  /* Resultados: más compactos */
+  .calc__results { gap: .5rem; }
+  .calc__result-card { padding: .75rem 1rem; gap: .6rem; }
+  .calc__result-card--main { padding: .9rem 1rem; }
+  .calc__result-card--main .calc__result-value { font-size: 1.55rem; }
+  .calc__result-grid { gap: .5rem; }
+  .calc__result-grid .calc__result-card { padding: .6rem .75rem; }
+  .calc__result-value { font-size: 1.1rem; }
+  .calc__result-value--sm { font-size: .95rem; }
+  .calc__result-icon { width: 28px; height: 28px; }
+
+  /* Botón CTA */
+  .calc__cta { padding: .75rem; font-size: .92rem; margin-top: .25rem; }
+}
+
 /* ===========================
    SISTEMAS FOTOVOLTAICOS
 =========================== */
