@@ -4037,30 +4037,42 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 
 @media (max-width: 640px) {
   .hero__inner {
+    padding-top: 5rem;
     padding-bottom: 0;
+    gap: 1.5rem;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
   .hero__bill-side {
     display: block;
     position: static;
     width: 100%;
-    max-height: 140px;
-    overflow: hidden;
+    overflow: visible;
     align-self: center;
+    margin-top: -0.5rem;
     animation: mobileBillFadeUp 0.9s ease 0.7s both;
   }
   .hero__bill-side .bill-doc {
-    width: 68vw;
-    max-width: 240px;
+    width: 78vw;
+    max-width: 290px;
     margin: 0 auto;
-    transform: rotate(-3deg);
+    transform: rotate(-4deg);
     transform-origin: top center;
     animation: none;
-    box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 4px 12px rgba(0,0,0,.35);
+    box-shadow: 0 24px 70px rgba(0,0,0,.65), 0 6px 16px rgba(0,0,0,.4);
+  }
+  /* Solo mostrar botón principal en mobile */
+  .hero__actions .btn--ghost {
+    display: none;
+  }
+  .hero__actions .btn--primary {
+    width: 100%;
+    text-align: center;
   }
 }
 
 @keyframes mobileBillFadeUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(60px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
