@@ -4037,38 +4037,34 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 
 @media (max-width: 640px) {
   .hero__inner {
-    padding-top: 5rem;
-    padding-bottom: 0;
-    gap: 1.5rem;
-    min-height: 100vh;
+    padding-top: 4.5rem;
+    padding-bottom: 1rem;
+    gap: 1rem;
     justify-content: flex-start;
   }
+  /* Ventana fija que contiene la boleta escalada */
   .hero__bill-side {
     display: block;
     position: static;
     width: 100%;
-    max-height: 210px;
+    height: 310px;
     overflow: hidden;
     align-self: center;
     animation: mobileBillFadeUp 0.9s ease 0.7s both;
   }
+  /* Boleta a tamaño natural pero escalada al 60% */
   .hero__bill-side .bill-doc {
-    width: 72vw;
-    max-width: 260px;
-    margin: 0 auto;
-    transform: rotate(-4deg);
+    width: 360px;
+    position: relative;
+    left: calc(50% - 180px);
+    transform: scale(0.60) rotate(-3deg);
     transform-origin: top center;
     animation: none;
     box-shadow: 0 24px 70px rgba(0,0,0,.65), 0 6px 16px rgba(0,0,0,.4);
   }
-  /* Solo mostrar botón principal en mobile */
-  .hero__actions .btn--ghost {
-    display: none;
-  }
-  .hero__actions .btn--primary {
-    width: 100%;
-    text-align: center;
-  }
+  /* Solo botón principal en mobile */
+  .hero__actions .btn--ghost { display: none; }
+  .hero__actions .btn--primary { width: 100%; text-align: center; }
 }
 
 @keyframes mobileBillFadeUp {
