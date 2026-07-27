@@ -4424,6 +4424,20 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   overflow: visible;
   filter: drop-shadow(0 6px 24px rgba(0,0,0,.12));
 }
+
+@media (max-width: 640px) {
+  .chile-svg-wrap {
+    padding: 0 0 2rem;
+    margin-top: 1.5rem;
+  }
+  .chile-svg-map {
+    width: 100%;
+    min-height: 180px;
+  }
+  .chile-map-wrap {
+    padding: 0;
+  }
+}
 .chile-svg-caption {
   text-align: center;
   margin-top: 1.4rem;
