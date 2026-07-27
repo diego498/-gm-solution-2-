@@ -4037,21 +4037,21 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 
 @media (max-width: 640px) {
   .hero__inner {
-    padding-bottom: 200px;
+    padding-bottom: 110px;
   }
   .hero__bill-side {
     display: block;
     position: absolute;
-    bottom: -130px;
+    bottom: -300px;
     left: 50%;
     transform: translateX(-50%);
-    width: 84vw;
-    max-width: 310px;
+    width: 78vw;
+    max-width: 280px;
     animation: mobileBillUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s both;
   }
   .hero__bill-side .bill-doc {
     width: 100%;
-    transform: rotate(-2deg);
+    transform: rotate(-3deg);
     animation: none;
     box-shadow: 0 20px 60px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.3);
   }
@@ -4059,7 +4059,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 
 @keyframes mobileBillUp {
   from {
-    transform: translateX(-50%) translateY(220px);
+    transform: translateX(-50%) translateY(300px);
     opacity: 0;
   }
   to {
