@@ -4047,14 +4047,14 @@ button { border: none; cursor: pointer; font-family: var(--font); }
     display: block;
     position: static;
     width: 100%;
-    overflow: visible;
+    max-height: 210px;
+    overflow: hidden;
     align-self: center;
-    margin-top: -0.5rem;
     animation: mobileBillFadeUp 0.9s ease 0.7s both;
   }
   .hero__bill-side .bill-doc {
-    width: 78vw;
-    max-width: 290px;
+    width: 72vw;
+    max-width: 260px;
     margin: 0 auto;
     transform: rotate(-4deg);
     transform-origin: top center;
