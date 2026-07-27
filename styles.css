@@ -4036,7 +4036,36 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 }
 
 @media (max-width: 640px) {
-  .hero__bill-side { display: none; }
+  .hero__inner {
+    padding-bottom: 200px;
+  }
+  .hero__bill-side {
+    display: block;
+    position: absolute;
+    bottom: -130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84vw;
+    max-width: 310px;
+    animation: mobileBillUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s both;
+  }
+  .hero__bill-side .bill-doc {
+    width: 100%;
+    transform: rotate(-2deg);
+    animation: none;
+    box-shadow: 0 20px 60px rgba(0,0,0,.55), 0 4px 12px rgba(0,0,0,.3);
+  }
+}
+
+@keyframes mobileBillUp {
+  from {
+    transform: translateX(-50%) translateY(220px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ---- Casos de Éxito ---- */
