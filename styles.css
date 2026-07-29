@@ -1021,7 +1021,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   z-index: 1;
 }
 
-.sist-card__pop--green { background: var(--green); color: var(--white); }
+.sist-card__pop--green { background: var(--green); color: #064763; }
 
 /* Foto superior en tarjeta (ej. Off-Grid) */
 .sist-card__photo {
