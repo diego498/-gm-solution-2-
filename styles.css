@@ -1718,11 +1718,10 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   color: #064763;
   font-size: .9rem;
   font-weight: 600;
-  padding: .875rem 1.25rem;
-  background: var(--gray-50);
-  border-radius: var(--radius);
+  padding: .25rem 0;
+  background: transparent;
+  border: none;
   transition: var(--transition);
-  border: 1.5px solid #064763;
 }
 
 .contact__channel svg {
@@ -1731,9 +1730,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 }
 
 .contact__channel:hover {
-  background: #064763;
-  color: var(--white);
-  border-color: #064763;
+  color: #EDB115;
 }
 
 /* FORM */
