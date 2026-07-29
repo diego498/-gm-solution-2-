@@ -1715,14 +1715,14 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   display: flex;
   align-items: center;
   gap: .9rem;
-  color: var(--teal);
+  color: #064763;
   font-size: .9rem;
   font-weight: 600;
   padding: .875rem 1.25rem;
   background: var(--gray-50);
   border-radius: var(--radius);
   transition: var(--transition);
-  border: 1.5px solid transparent;
+  border: 1.5px solid #064763;
 }
 
 .contact__channel svg {
@@ -1731,9 +1731,9 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 }
 
 .contact__channel:hover {
-  background: var(--teal);
+  background: #064763;
   color: var(--white);
-  border-color: var(--teal);
+  border-color: #064763;
 }
 
 /* FORM */
