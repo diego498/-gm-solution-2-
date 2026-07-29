@@ -1091,9 +1091,9 @@ button { border: none; cursor: pointer; font-family: var(--font); }
 }
 .sist-card__icon svg { width: 100%; height: 100%; }
 
-.sist-card--gold .sist-card__icon  { color: #c48b00; }
-.sist-card--teal .sist-card__icon  { color: var(--teal); }
-.sist-card--green .sist-card__icon { color: var(--green); }
+.sist-card--gold .sist-card__icon  { color: #064763; }
+.sist-card--teal .sist-card__icon  { color: #064763; }
+.sist-card--green .sist-card__icon { color: #064763; }
 
 .sist-card__head h3 {
   font-size: 1.45rem;
