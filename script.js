@@ -2,15 +2,6 @@
    LeadMed – script.js
 =========================== */
 
-/* ---- Video casos de éxito ---- */
-function playVideo(btn) {
-  const thumb = btn.closest('.caso-card__thumb');
-  const video = thumb.querySelector('.caso-card__video');
-  thumb.classList.add('is-playing');
-  video.controls = true;
-  video.play();
-}
-
 /* ---- NAV scroll state ---- */
 const nav = document.getElementById('nav');
 const onScroll = () => {
