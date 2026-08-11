@@ -4156,6 +4156,14 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   background: linear-gradient(135deg, #1a2332 0%, #004763 100%);
 }
 
+.caso-card__thumb--video .caso-card__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.caso-card__thumb--video.is-playing .caso-card__play { display: none; }
+
 .caso-card__play {
   position: absolute;
   inset: 0;
@@ -4164,8 +4172,11 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   justify-content: center;
   background: rgba(0,0,0,.35);
   color: #fff;
-  opacity: 0;
+  opacity: 1;
   transition: opacity .3s;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 .caso-card:hover .caso-card__play { opacity: 1; }
 .caso-card__play svg {
