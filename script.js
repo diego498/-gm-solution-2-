@@ -44,6 +44,29 @@ document.querySelectorAll('.hero .reveal-up').forEach((el, i) => {
   setTimeout(() => el.classList.add('visible'), 200 + i * 150);
 });
 
+/* ---- Boleta: contador $150.786 → $0 ---- */
+const heroCounter = document.getElementById('heroCounter');
+if (heroCounter) {
+  const startVal = 150786;
+  const duration = 2800;
+  let startTime = null;
+
+  const tickCounter = (now) => {
+    if (!startTime) startTime = now;
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    // ease-out cubic
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(startVal * (1 - ease));
+    heroCounter.textContent = '$' + current.toLocaleString('es-CL');
+    if (progress < 1) requestAnimationFrame(tickCounter);
+    else heroCounter.textContent = '$0';
+  };
+
+  // Empieza después de que el hero aparece
+  setTimeout(() => requestAnimationFrame(tickCounter), 900);
+}
+
 /* ---- Counter animation ---- */
 const counters = document.querySelectorAll('.stat__num');
 
