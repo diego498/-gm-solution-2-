@@ -1756,7 +1756,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
   font-weight: 700;
   letter-spacing: .05em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: #064763;
 }
 
 .form-group input,
