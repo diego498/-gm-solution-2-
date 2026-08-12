@@ -44,59 +44,60 @@ document.querySelectorAll('.hero .reveal-up').forEach((el, i) => {
   setTimeout(() => el.classList.add('visible'), 200 + i * 150);
 });
 
-/* ---- Boleta: contador $150.786 → $0 ---- */
+/* ---- Boleta: contador $150.786 → $0 (loop) ---- */
 const heroCounter = document.getElementById('heroCounter');
 if (heroCounter) {
   const startVal = 150786;
   const duration = 2800;
-  let startTime = null;
+  const pauseAfter = 1500;
 
-  const tickCounter = (now) => {
-    if (!startTime) startTime = now;
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    // ease-out cubic
-    const ease = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(startVal * (1 - ease));
-    heroCounter.textContent = '$' + current.toLocaleString('es-CL');
-    if (progress < 1) requestAnimationFrame(tickCounter);
-    else heroCounter.textContent = '$0';
-  };
+  function runCounter() {
+    let startTime = null;
+    const tick = (now) => {
+      if (!startTime) startTime = now;
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(startVal * (1 - ease));
+      heroCounter.textContent = '$' + current.toLocaleString('es-CL');
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        heroCounter.textContent = '$0';
+        setTimeout(runCounter, pauseAfter);
+      }
+    };
+    requestAnimationFrame(tick);
+  }
 
-  // Empieza después de que el hero aparece
-  setTimeout(() => requestAnimationFrame(tickCounter), 900);
+  setTimeout(runCounter, 900);
 }
 
-/* ---- Counter animation ---- */
-const counters = document.querySelectorAll('.stat__num');
+/* ---- Counter animation (loop) ---- */
+document.querySelectorAll('.stat__num').forEach(el => {
+  const target = +el.dataset.target;
+  const duration = 1800;
+  const pauseAfter = 2500;
 
-const countObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = +el.dataset.target;
-      const duration = 1800;
-      const start = performance.now();
+  function runCount() {
+    el.textContent = '0';
+    const start = performance.now();
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(ease * target);
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target;
+        setTimeout(runCount, pauseAfter);
+      }
+    };
+    requestAnimationFrame(tick);
+  }
 
-      const tick = (now) => {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease out cubic
-        const ease = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(ease * target);
-        if (progress < 1) requestAnimationFrame(tick);
-        else el.textContent = target;
-      };
-
-      requestAnimationFrame(tick);
-      countObserver.unobserve(el);
-    });
-  },
-  { threshold: 0.5 }
-);
-
-counters.forEach(c => countObserver.observe(c));
+  setTimeout(runCount, 500);
+});
 
 /* ---- Smooth scroll for anchor links ---- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
