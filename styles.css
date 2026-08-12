@@ -4103,8 +4103,7 @@ button { border: none; cursor: pointer; font-family: var(--font); }
     animation: none;
     box-shadow: 0 24px 70px rgba(0,0,0,.65), 0 6px 16px rgba(0,0,0,.4);
   }
-  /* Solo botón principal en mobile */
-  .hero__actions .btn--ghost { display: none; }
+  .hero__actions .btn--ghost { display: flex; width: 100%; text-align: center; justify-content: center; }
   .hero__actions .btn--primary { width: 100%; text-align: center; }
 }
 
