@@ -132,27 +132,37 @@ if (boletaInput && fileName) {
   });
 }
 
-/* ---- Form submit (placeholder) ---- */
+/* ---- Form submit → Formspree ---- */
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     const original = btn.textContent;
     btn.textContent = 'Enviando...';
     btn.disabled = true;
 
-    // Simulate send – connect to your backend or Formspree here
-    setTimeout(() => {
-      btn.textContent = '¡Mensaje enviado!';
-      btn.style.background = '#06752E';
-      form.reset();
+    try {
+      const res = await fetch('https://formspree.io/f/TU_FORM_ID', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        window.location.href = 'https://gmsolution.cl/gracias';
+      } else {
+        throw new Error('error');
+      }
+    } catch {
+      btn.textContent = 'Error al enviar. Intenta de nuevo.';
+      btn.style.background = '#c0392b';
       setTimeout(() => {
         btn.textContent = original;
         btn.style.background = '';
         btn.disabled = false;
-      }, 3000);
-    }, 1200);
+      }, 4000);
+    }
   });
 }
 
