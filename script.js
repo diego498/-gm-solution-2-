@@ -132,7 +132,7 @@ if (boletaInput && fileName) {
   });
 }
 
-/* ---- Form submit → Formspree ---- */
+/* ---- Form submit → WordPress ---- */
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', async (e) => {
@@ -143,10 +143,9 @@ if (form) {
     btn.disabled = true;
 
     try {
-      const res = await fetch('https://formspree.io/f/TU_FORM_ID', {
+      const res = await fetch('https://gmsolution.cl/enviar-cotizacion.php', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        body: new FormData(form)
       });
 
       if (res.ok) {
