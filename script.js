@@ -132,7 +132,7 @@ if (boletaInput && fileName) {
   });
 }
 
-/* ---- Form submit → WordPress ---- */
+/* ---- Form submit → ventas@gmsolution.cl ---- */
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', async (e) => {
@@ -142,10 +142,14 @@ if (form) {
     btn.textContent = 'Enviando...';
     btn.disabled = true;
 
+    const data = new FormData(form);
+    data.append('_subject', 'Nueva cotización GMsolution');
+
     try {
-      const res = await fetch('https://gmsolution.cl/enviar-cotizacion.php', {
+      const res = await fetch('https://formsubmit.co/ajax/ventas@gmsolution.cl', {
         method: 'POST',
-        body: new FormData(form)
+        headers: { 'Accept': 'application/json' },
+        body: data
       });
 
       if (res.ok) {
